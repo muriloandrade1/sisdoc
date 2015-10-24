@@ -1,0 +1,16 @@
+.newsslider {
+	position:relative;
+	overflow:hidden;
+	height:200px;
+	width:280px;
+	float: left;
+}
+.newsslidercontent {
+	position:absolute;
+	width: 100%;
+}
+.newssection {
+	height:100px;
+	width:270px;
+	padding-bottom: 20px;
+}

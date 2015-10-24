@@ -1,0 +1,22 @@
+<script>
+jQuery('#frmPlanosSaude').ready(function(){
+	jQuery('#idCategoria').change(function(){
+		carregaConteudoPagina('/alterar/detalhesplano/','detalhe',this.value,'<?php echo $this->op; ?>');
+    	jQuery('#noCategoria').val(jQuery('#idCategoria option:selected').text());
+    });
+	jQuery('#btExcluiCategoriaPlano').click(function(){
+		jQuery('#idOperadora').change();
+    });	
+});
+</script>
+<label class="form-lbl">Categoria do plano:</label>
+<select id="idCategoria" name="idCategoria" style="width:80%;">
+	<option value="">Selecione...</option>
+	<?php if( count( $this->objCategoriaPlano ) ): ?>
+		<?php foreach( $this->objCategoriaPlano as $values ): ?>
+			<option value="<?= $values->getIdCategoriaPlano() ?>"><?= $values->getNoCategoriaPlano() ?></option>
+		<?php endforeach; ?>
+	<?php endif; ?>
+</select>
+<img src="../../../../img/form-ic-error.png" id="btExcluiCategoriaPlano" alt="Excluir categoria do plano" title="Excluir categoria do plano" style="cursor:pointer;">
+<input class="form-txt" type="text" name="noCategoria" id="noCategoria" value="" style="width:80%;">

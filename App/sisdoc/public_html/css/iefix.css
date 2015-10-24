@@ -1,0 +1,9 @@
+.clsClearFix{
+ zoom: 1;     /* triggers hasLayout */
+} 
+
+/*png fix*/
+#logo h1/*, #submenu li a:hover , a.current  */{ 
+  behavior: url(js/iepngfix.htc);
+  }
+

@@ -1,0 +1,77 @@
+<script>
+jQuery(document).ready(function(){
+
+		jQuery("#idTipoPlano").change(function(){
+			carregaPagina('<?= $this->baseUrl() ?>/conteudo/operadora/','plano',jQuery('#idTipoPlano').val());
+	    });
+
+		jQuery("#frmPessoais").validate({
+			rules:{
+				nuTelefone:{required: function(){if(jQuery('#nuCelular').val() == "" && jQuery('#dsEmail').val() == ""){return true;}else{return false;}}},
+				nuCelular:{required: function(){if(jQuery('#nuTelefone').val() == "" && jQuery('#dsEmail').val() == ""){return true;}else{return false;}}},
+				dsEmail:{required: function(){if(jQuery('#nuTelefone').val() == "" && jQuery('#nuCelular').val() == ""){return true;}else{return false;}}}
+			}
+			,
+			messages:{
+				nuTelefone:"Telefone, ",
+				nuCelular:"Celular ou",
+				dsEmail:"Email"
+			}
+		});
+		
+    });
+</script>
+<h2>Formulário de contato</h2>
+<form class="form" id="frmPessoais" method="POST" action="<?= $this->actionForm ?>">
+    <br>
+    <div class="grid-12-12">
+        <h5 style="color:red;"><?php echo (!empty($this->msg)) ? $this->msg : ""; ?></h5>
+    </div>
+    <fieldset style="border: 1px solid #cacaca;">
+        <legend><h4>Dados Pessoais</h4></legend>
+        <div class="grid-8-12">
+            <label class="form-lbl">Nome:</label>
+            <input class="form-txt required" id="noPessoa" name="noPessoa" maxlength="60" size="40" value=""/>
+            <label class="error" for="noPessoa" generated="true" style="display:none;color:red;">Campo obrigatório</label>
+        </div>
+        <div class="grid-4-12">
+            <label class="form-lbl"> Idade:</label>
+            <input class="form-txt required" id="nrIdade" name="nrIdade" maxlength="3" size="5" value=""
+            		onkeypress="return teclaNumerica(event);"/>
+            <label class="error" for="nrIdade" generated="true" style="display:none;color:red;">Campo obrigatório</label>
+        </div>
+	</fieldset>
+	<br>
+    <fieldset style="border: 1px solid #cacaca;">
+        <legend><h4>Contatos</h4></legend>
+        <div class="grid-4-12">
+            <label class="form-lbl">Telefone:</label>
+            <input class="form-txt" id="nuTelefone" name="nuTelefone" alt="9999-9999" size="15" maxlength="13" value=""/>
+        </div>
+        <div class="grid-4-12">
+            <label class="form-lbl">Celular:</label>
+            <input class="form-txt" id="nuCelular" name="nuCelular" alt="9999-9999" size="15" maxlength="13" value=""/>
+        </div>
+        <div class="grid-4-12"></div>
+        <div class="grid-6-12">
+            <label class="form-lbl">Email:</label>
+            <input class="form-txt" id="dsEmail" name="dsEmail" maxlength="99" size="60" value=""/>
+            <br>
+            <label style="color:red;">Informe pelo menos uma forma de contato.</label>
+			<label class="error" id="msgErro" for="nuTelefone" generated="true" style="display:none;color:red;">Telefone, </label>
+			<label class="error" id="msgErro" for="nuCelular" generated="true" style="display:none;color:red;">Celular ou </label>
+			<label class="error" id="msgErro" for="dsEmail" generated="true" style="display:none;color:red;">Email</label>
+        </div>
+    </fieldset>
+    <br>
+    <fieldset style="border: 1px solid #cacaca;">
+        <legend><h4>Informação / Sugestão</h4></legend>
+        <div class="grid-12-12">
+        	<textarea id="dsContato" class="required" name="dsContato" rows="10" cols="50" maxlength="400"></textarea>
+        	<label class="error" for="dsContato" generated="true" style="display:none;color:red;">Campo obrigatório</label>
+        </div>
+    </fieldset>
+    <div class="grid-4-12 form">
+        <input class="form-button" type="submit" value="Enviar" title="Salvar" id="btSalvar"/>
+    </div>
+</form>

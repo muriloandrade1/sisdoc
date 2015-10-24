@@ -1,0 +1,33 @@
+<script>
+jQuery('#frmPlanosSaude').ready(function(){
+	jQuery('#idFaixaEtaria').change(function(){
+		carregaPagina('<?= $this->baseUrl() ?>/conteudo/valorfaixaetaria/','valorPlano',jQuery('#idFaixaEtaria').val());
+    });
+});
+jQuery("#maisDetalhe").click(function(){
+	jQuery("#maisDetalhe1").toggle("slow");
+});
+</script>
+<div class="grid-6-12">
+	<table width="99%">
+		<tr style="text-align:left;">
+			<td><label class="form-lbl">Faixa et&aacute;ria</label></td>
+			<td><label class="form-lbl">Valor</label></td>
+		</tr>
+		<?php if( count( $this->objFaixaEtaria ) ):
+			foreach( $this->objFaixaEtaria as $values ): ?> 
+				<tr style="text-align:left;border-bottom: 1px solid #CECECE;">
+					<td style="border-bottom: 1px solid #CECECE;"><?php echo $values->getNoFaixaEtaria(); ?></td>
+					<td style="border-bottom: 1px solid #CECECE;"><?php echo $values->getNuValor(); ?></td>
+				</tr>
+			<?php $dtVigencia = $values->getDtVigencia(); 
+			endforeach;
+		endif; ?>
+	</table>
+</div>
+<div class="grid-5-12">
+	<label>*Valores vigentes desde o dia <?php echo date("d/m/Y",strtotime($dtVigencia)) ?>, sugeitos a alteração de acordo com a respectiva operadora.</label>
+</div>
+<div class="grid-12-12">
+	<!-- <a id="maisDetalhe" style="cursor:pointer;font-size:15px;"><strong>+detalhes</strong></a> -->
+</div>

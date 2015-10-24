@@ -1,0 +1,31 @@
+<table id="tbContatos" border="1" style="width:99%;">
+	<tr style="color:#ffffff;background: #c3cfc2;">
+		<td></td>
+		<td>Nome</td>
+		<td>Idade</td>
+		<td>Data do registro</td>
+		<td>Data do contato</td>
+		<td>Telefone</td>
+		<td>Celular</td>
+		<td>Email</td>
+	</tr>
+	
+	<?php $cont = 1; 
+	foreach($this->arrPessoaContato as $k){ ?>
+		<tr>
+			<td><?php echo $cont; ?></td>
+			<td><?php echo $k['NOME']; ?></td>
+			<td><?php echo $k['IDADE']; ?></td>
+			<td><?php echo $k['REGISTRO']; ?></td>
+			<td><?php echo $k['CONTATO']; ?></td>
+			<td><?php echo $k['TELEFONE']; ?></td>
+			<td><?php echo $k['CELULAR']; ?></td>
+			<td><?php echo $k['EMAIL']; ?></td>
+		</tr>	
+	<?php $cont++; 
+	} ?>
+</table>
+<script>
+	jQuery('#tbContatos tr:odd').attr("style","background:#c3cfff;");
+	//jQuery('#tbContatos tr:even').attr("style","background:#c3cfc2;");
+</script>

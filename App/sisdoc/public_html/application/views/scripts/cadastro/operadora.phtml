@@ -1,0 +1,32 @@
+<script>
+jQuery(document).ready(function(){
+
+	jQuery('#frmPessoais').validate({
+		rules: {
+        	noOperadora: {required: true},
+        	dsOperadora: {required: true}
+        },
+        messages: {
+           	noOperadora: 'Campo obrigatório',
+           	dsOperadora: 'Campo obrigatório'
+        }
+    });
+});
+</script>
+<h1>CADASTRAR OPERADORA</h1>
+<form class="form" id="frmPessoais" method="POST" action="<?= $this->actionForm ?>">
+    <fieldset>
+        <legend>Dados da Operadora</legend>
+        <div class="grid-12-12">
+            <label class="form-lbl">Nome:</label>
+            <input class="form-txt" id="noOperadora" name="noOperadora" maxlength="60" value=""/>
+        </div>
+        <div class="grid-12-12">
+            <label class="form-lbl">Descrição:</label>
+            <textarea class="form-txt" id="dsOperadora" name="dsOperadora" maxlength="200" style="width: 99%;"></textarea>
+        </div>
+    </fieldset>
+    <div class="grid-4-12 form">
+        <input class="form-button" type="submit" value="Salvar" title="Salvar"/>
+    </div>
+</form>

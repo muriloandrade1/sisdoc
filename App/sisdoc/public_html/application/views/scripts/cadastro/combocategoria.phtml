@@ -1,0 +1,11 @@
+<div class="grid-4-12" id="categoria">
+	<label class="form-lbl">Categoria:</label>
+	<select id="idCategoriaPlano" name="idCategoriaPlano" style="width:230px;">
+		<option value="">Selecione...</option>
+		<?php if( count( $this->objCategoria ) ): 
+			foreach( $this->objCategoria as $values ): ?>
+				<option value="<?= $values->getIdCategoriaPlano() ?>"><?= $values->getNoCategoriaPlano() ?></option>
+			<?php endforeach; 
+		endif; ?>
+	</select>
+</div>

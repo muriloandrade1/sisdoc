@@ -1,0 +1,319 @@
+/*COMMON STYLES*/
+body {
+	background:#6B9801 url(../images/body_bg.jpg) repeat-x scroll 0 0;
+	margin:0;
+	padding:0;
+	font:12px Arial, Helvetica, sans-serif;
+}
+
+form,table,p,h1,h2,h3,h4,h5,h6,ul,li,div,dl{
+	margin:0;
+	padding:0;
+	font-size:100%;
+	}
+	li
+	{
+	list-style-type:none;
+	}
+   a{
+	text-decoration:none;
+	color:#000000;
+	outline:none;
+	}
+	a:hover{
+		text-decoration:none;
+	}
+	img{
+		border:0;
+		vertical-align:top;
+	}
+	.clsFloatLeft{
+		float:left;
+	}
+	.clsFloatRight{
+		float:right;
+	}
+/*--------END OF COMMON STYLES ---------*/	
+/*--------CLEARFIX FOR FLAOTING PROBLEM'S-------*/
+	.clsClearfix:after {
+	content: ".";
+	display: block;
+	clear: both;
+	visibility: hidden;
+	line-height: 0;
+	height: 0;
+}
+ 
+.clsClearfix {
+	display: inline-block;
+}
+ 
+html[xmlns] .clsClearfix {
+	display: block;
+}
+ 
+* html .clsClearfix {
+	height: 1%;
+  }
+
+/*------SERVICES CORNERS------*/
+.inner_t {
+	background:url(../images/inner_tb.jpg) 0px top repeat-x #ffffff;
+	}
+.inner_b{
+	background:url(../images/inner_bb.jpg) 0px bottom repeat-x;
+}
+.inner_r{
+	background:url(../images/inner_rb.jpg) right 0px repeat-y;
+	}
+.inner_l{
+	background:url(../images/inner_lb.jpg) 0px 0px repeat-y;
+	}
+.inner_tl {
+	background:url(../images/inner_tlc.jpg) left top no-repeat;
+	}
+.inner_tr{
+	background:url(../images/inner_trc.jpg) right 0px no-repeat;
+	}
+.inner_bl{
+	background:url(../images/inner_blc.jpg) left bottom no-repeat;
+}
+.inner_br{
+	background:url(../images/inner_brc.jpg) right bottom no-repeat;
+	padding:26px 10px 9px 10px;
+	}
+
+/*------Rounded Corners-------*/
+.gray_t {
+	background:url(../images/gray_tb.jpg) 0px top repeat-x #F8F8F8;
+	}
+.gray_b{
+	background:url(../images/gray_bb.jpg) 0px bottom repeat-x;
+}
+.gray_r{
+	background:url(../images/gray_rb.jpg) right 0px repeat-y;
+	}
+.gray_l{
+	background:url(../images/gray_lb.jpg) 0px 0px repeat-y;
+	}
+.gray_tl {
+	background:url(../images/gray_tlc.jpg) left top no-repeat;
+	}
+.gray_tr{
+	background:url(../images/gray_trc.jpg) right 0px no-repeat;
+	}
+.gray_bl{
+	background:url(../images/gray_blc.jpg) left bottom no-repeat;
+}
+.gray_br{
+	background:url(../images/gray_brc.jpg) right bottom no-repeat;
+	padding:20px 22px 24px 16px;
+	}
+* html .cls100_p{
+	width:100%;
+	}
+.cls100_p{
+ 	height:1%;
+ }	 
+/*--------CONTAINER-------*/
+#Container {
+	width:910px;
+	margin:0 auto;
+}
+#top {
+	left:-999em;
+	position:absolute;
+}
+/*--------LOGO------*/
+#logo {											
+	width:290px;
+	padding-bottom:10px;
+}
+#logo div {
+	background:url(../images/logo.png) no-repeat;
+}
+#logo a {
+	width:290px;
+	height:79px;
+	display:block;
+	overflow:hidden;
+	text-indent:-2000em;
+}
+#selSlogon {
+	padding:35px 0 33px 59px;;
+}
+#selSlogon p {
+	font:18px Georgia, "Times New Roman", Times, serif; 
+}
+/*---------SUBMENU---------*/
+#submenu {
+	padding-left:3px;
+}
+.clsSubmenu_left {
+	padding-left:7px;
+	background:url(../images/submenu_left.PNG) no-repeat scroll left;
+}
+.clsSubmenu_right {
+	padding-right:7px;
+	background:url(../images/submenu_right.png) no-repeat scroll right;
+} 
+.clsSubmenu_center {
+	background:url(../images/submenu_center.jpg) repeat-x scroll 0;
+	height:70px;
+}
+#submenu ul {
+	margin-left:29px;
+}
+#submenu li {
+	float:left;
+	margin-right:28px;
+	font:bold 13px Arial, Helvetica, sans-serif;
+}
+#submenu li a {
+	display:block;
+	line-height:68px;
+	text-align:center;
+	width:110px;
+	color:#FFF;
+}
+#submenu li a:hover, a.current {
+	background:url(../images/menu_over.png) no-repeat top;
+}
+/*--------BANNER-------*/
+#banner {
+	height:270px;
+	margin:0 0 2px 3px;
+	color:#FFF;
+	background:url(../images/banner_bg.png) no-repeat scroll 0 0;
+}
+.clsBanner_txt {
+	font:12PX Arial, Helvetica, sans-serif;
+	color:#000000;
+	width:446px;
+	padding:152px 0 0 53px;
+}
+.clsBanner_btn {
+	background:url(../images/_bt_banner.jpg) no-repeat scroll 0 0;
+	height:26px;
+	width:82px;
+	margin:9px 0 0 402px;
+	color: #fff;
+}
+.clsBanner_btn a {
+	color:#FFFFFF;
+	line-height:24px;
+	margin-left:10px;
+}
+/*--------CONTENT---------*/
+#Content {
+	margin-left:3px;
+	height:1%;
+}
+/*-------WELCOME--------*/
+.clsWelcome {
+	color:#000000;
+	font:13px "Trebuchet MS";
+}
+.clsWelcome h2 {
+	background:url(../images/h2_welcome.jpg) no-repeat scroll left 5px;
+	font: bold 18px Cambria;
+	padding:35px 0 35px 50px;
+}
+.clsWelcome p {
+	font: 13px Arial, Helvetica, sans-serif;
+	padding-bottom:21px;
+}
+.clsWelcome p span {
+	color:#237773;
+	font-weight:bold;
+}
+.clsWelcome p a {
+	color:#237773;
+	text-decoration:underline;
+}
+/*-------SERVICES--------*/
+#services {
+	margin:10px 0 0 6px;
+}
+#services h3 {
+	text-align:center;
+	font:bold 18px "Times New Roman", Times, serif;
+}
+#services img {
+	margin:26px 0;
+}
+#services p {
+	margin:0 5px;
+}
+.clsReadmore {
+	background:url(../images/read_more_bg.jpg) no-repeat scroll right;
+	height:24px;
+	line-height:22px;
+	text-align:right;
+}
+.clsReadmore a {
+	float:right;
+	color:#FFF;
+	padding-right:8px;
+}
+/*---------WAITING------*/
+.clsGrowing, .clsWaiting {
+	margin-right:17px;
+	width:276px;
+}
+.clsGrowing h3 {
+	color:#6E7132;
+}
+.clsCelebrating {
+	 width:276px;
+}
+/*------WAITING------*/
+.clsWaiting h3 {
+	color:#B37904;
+}
+/*------CELEBRATING------*/
+.clsCelebrating h3 {
+	color:#065EA6;
+}
+/*---------Footer-----*/
+#footer
+{
+	margin:0 0 20px 3px;
+	padding-top:3px;
+	color:#FFF;
+}	
+.clsFooter_left {
+	padding-left:5px;
+	background:url(../images/footer_left.jpg) no-repeat scroll left;
+}
+.clsFooter_right {
+	padding-right:5px;
+	background:url(../images/footer_right.jpg) no-repeat scroll right;
+}
+.clsFooter_center {
+	height:55px;
+	width:897px;
+	background:url(../images/footer_center.jpg) repeat-x scroll center;
+}
+#footer ul 	{
+	padding:20px;
+	float:right;
+	}
+#footer li {
+	display:inline;
+	}
+#footer li a {
+	color:#FFF;
+	}
+#footer p {
+	padding:20px;
+	float:left;
+	}
+#footer	.clsborder a {
+    background:url(../images/footer_nav_border.jpg) no-repeat right center;
+    padding:0 5px;
+    margin:0;
+    }
+#footer	.clsNoborder a 	{
+	background:none;
+	}

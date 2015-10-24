@@ -1,0 +1,76 @@
+body {
+    background: url('../images/bg_toptop.png') repeat-x #388398;
+    font: normal 0.8em Calibri, Verdana, Arial;
+    color: #000000;
+    font: 62.5% "Trebuchet MS", sans-serif;
+    margin: 0 auto;
+    width: 770px;
+    border: 1px solid #3C6591;
+}
+
+#header {
+    background: url("../images/header_back.jpg") no-repeat #FFF;
+    height: 220px;
+}
+
+#corretor{
+    width: 230px;
+    height: 128px;
+    margin: 43px 0 0 42px;
+    position: absolute;
+    color: #FFF;
+    padding: 10px;
+}
+
+#inform {
+    background-color: olive;
+    height: 38px;
+    background: #C1E0E5;
+}
+
+#content{
+    background: #FFFFFF;
+    padding: 5px;
+}
+
+#conteudoTopo{
+    width: 100%;
+    margin: 10px 0px 10px 0px;
+    border-bottom: 0.5px dotted;
+}
+
+#conteudoLeft{
+    /*width: 60%;*/
+    width:100%;
+    /*border-right: 0.5px dotted;
+    padding: 6px;*/
+}
+
+#conteudoRight{
+    float: right;
+    /*width: 40%;*/
+}
+
+#footer{
+    height: 35px;
+    background: #C1E0E5;
+    text-align: center;
+}
+
+.form legend{
+    font-size: 1.1em
+}
+
+.form fieldset{
+    margin:0 0 1em;
+}
+
+.contador{
+    border: 1px solid #CCC;
+    padding: 5px;
+    width: 45%;
+    display: none;
+    float: left;
+    margin: 10px;
+}
+

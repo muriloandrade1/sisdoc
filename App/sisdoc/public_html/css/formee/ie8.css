@@ -1,0 +1,14 @@
+/********************************************************************
+
+Project: Formee - http://www.formee.org
+Last Updated: 19/04/2010
+Version: 1.1
+Authors: Bernard De Luna - http://www.bernarddeluna.com
+             Daniel Araujo - http://www.dnlaraujo.com.br
+			 Marcello Manso - http://www.marcellomanso.com.br
+********************************************************************
+Structure
+********************************************************************/
+
+
+.form .form-txt, .form textarea, .form select {width: 100%;box-sizing: border-box; -ms-box-sizing: border-box;}

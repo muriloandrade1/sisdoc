@@ -1,0 +1,53 @@
+<script>
+jQuery(document).ready(function(){
+
+	jQuery('#formCategoria').validate({
+        rules: {
+		idOperadora: 	  {required: true},
+		noCategoriaPlano: {required: true},
+		dsCategoriaPlano: {required: true},
+		dsRedeCredenciada:{required: true},
+	 	},
+	 	messages: {
+			idOperadora: 	  {required: 'Campo obrigatório'},
+			noCategoriaPlano: {required: 'Campo obrigatório'},
+			dsCategoriaPlano: {required: 'Campo obrigatório'},
+			dsRedeCredenciada:{required: 'Campo obrigatório'}
+	    }
+    });
+  
+
+});
+</script>
+<h1>CADASTRAR CATEGORIA</h1>
+<form class="form" id="formCategoria" method="POST" action="<?= $this->actionForm ?>">
+    <fieldset>
+        <legend>Categoria</legend>
+        <div class="grid-5-12">
+            <label class="form-lbl">Operadora:</label>
+            <select id="idOperadora" name="idOperadora">
+            	<option value="">Selecione...</option>
+	            <?php if( count( $this->objOperadora ) ): ?>
+		            <?php foreach( $this->objOperadora as $values ): ?>
+		                <option value="<?= $values->getIdOperadora() ?>"><?= $values->getNoOperadora() ?></option>
+		            <?php endforeach; ?>
+	            <?php endif; ?>
+            </select>
+        </div>
+        <div class="grid-7-12">
+            <label class="form-lbl">Categoria:</label>
+            <input type="text" class="form-txt" id="noCategoriaPlano" name="noCategoriaPlano" style="width: 99%;"></input>
+        </div>
+        <div class="grid-12-12">
+            <label class="form-lbl">Descrição do plano:</label>
+            <textarea class="form-txt" id="dsCategoriaPlano" name="dsCategoriaPlano" style="width: 99%;"></textarea>
+        </div>
+        <div class="grid-12-12">
+            <label class="form-lbl">Rede credênciada:</label>
+            <textarea class="form-txt" id="dsRedeCredenciada" name="dsRedeCredenciada" style="width: 99%;" rows="10"></textarea>
+        </div>
+    </fieldset>
+    <div class="grid-4-12 form">
+        <input class="form-button" type="submit" value="Salvar" title="Salvar"/>
+    </div>
+</form>

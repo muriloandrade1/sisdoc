@@ -1,0 +1,9 @@
+<label class="form-lbl">Plano:</label>
+<select id="idCategoria" name="idCategoria">
+	<option value="">Selecione...</option>
+	<?php if( count( $this->objTipoPlano ) ): ?>
+		<?php foreach( $this->objTipoPlano as $values ): ?>
+			<option value="<?= $values->getIdCategoriaPlano() ?>"><?= $values->getNoCategoriaPlano() ?></option>
+		<?php endforeach; ?>
+	<?php endif; ?>
+</select>

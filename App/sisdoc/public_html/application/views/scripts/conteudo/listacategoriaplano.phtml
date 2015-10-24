@@ -1,0 +1,16 @@
+<script>
+jQuery('#frmPlanosSaude').ready(function(){
+	jQuery('#IdCategoriaPlano').change(function(){
+		carregaConteudoPagina('<?= $this->baseUrl() ?>/conteudo/detalhesplano/','detalhe',jQuery('#IdCategoriaPlano').val(),'<?php echo $this->op;?>');
+    });	
+});
+</script>
+<label class="form-lbl">Categoria do plano:</label>
+<select id="IdCategoriaPlano" style="width:99%">
+	<option value="">Selecione...</option>
+	<?php if( count( $this->objCategoriaPlano ) ): 
+		foreach( $this->objCategoriaPlano as $values ): ?>
+			<option value="<?= $values->getIdCategoriaPlano() ?>"><?= $values->getNoCategoriaPlano() ?></option>
+		<?php endforeach;
+	endif; ?>
+</select>

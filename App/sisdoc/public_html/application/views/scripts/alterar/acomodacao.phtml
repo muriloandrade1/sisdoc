@@ -1,0 +1,42 @@
+<script>
+jQuery('#frmPlanosSaude').ready(function(){
+
+	//jQuery("#dtVigencia").datepicker();
+	
+	jQuery('#idFaixaEtaria').change(function(){
+		carregaPagina('<?= $this->baseUrl() ?>/conteudo/valorfaixaetaria/','valorPlano',jQuery('#idFaixaEtaria').val());
+    });	
+});
+jQuery("#maisDetalhe").click(function(){
+	jQuery("#maisDetalhe1").toggle("slow");
+});
+</script>
+<div class="grid-10-12">
+	<table width="99%">
+		<tr style="text-align:left;">
+			<td><label class="form-lbl">Faixa et&aacute;ria</label></td>
+			<td><label class="form-lbl">Valor</label></td>
+		</tr>
+		<?php $cont=0; 
+		if( count( $this->objFaixaEtaria ) ):
+			foreach( $this->objFaixaEtaria as $values ): 
+				$dtVigencia = $values->getDtVigencia(); ?> 
+				<tr style="text-align:left;border-bottom: 1px solid #CECECE;">
+					<td style="border-bottom: 1px solid #CECECE;">
+						<input type="hidden" name="idFaixaEtaria<?php echo $cont;?>" value="<?php echo $values->getIdFaixaEtaria(); ?>">
+						<input type="text" name="noFaixaEtaria<?php echo $cont;?>" value="<?php echo $values->getNoFaixaEtaria(); ?>" size="6"/>
+					</td>
+					<td style="border-bottom: 1px solid #CECECE;">
+						<input type="text" name="nuValor<?php echo $cont;?>" value="<?php echo $values->getNuValor(); ?>" size="10"/>
+					</td>
+				</tr>
+			<?php $cont++;
+			endforeach;
+		endif; ?>
+	</table>
+	<input type="hidden" name="cont" value="<?php echo $cont; ?>" />
+</div>
+<div class="grid-3-12">
+	<label class="form-lbl">Vigência dos valores:</label>
+	<input type="text" class="form-txt" id="dtVigencia" name="dtVigencia" style="width: 99%;" value="<?php echo date("d/m/Y",strtotime($dtVigencia));?>"></input>
+</div>

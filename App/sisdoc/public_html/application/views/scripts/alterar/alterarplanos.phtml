@@ -1,0 +1,35 @@
+<script type="text/javascript">
+jQuery('#frmPlanosSaude').ready(function(){
+	jQuery('#idOperadora').change(function(){
+		carregaPagina('<?= $this->baseUrl() ?>/alterar/categoriaplano/','categoriaPlano',this.value);
+		jQuery("#logoOperadora").attr({src:"../../../../img/img_logo/"+this.value+".jpg"});
+    });
+	jQuery('#btExcluiOperadora').click(function(){
+		window.reload();
+    });
+});
+</script>
+<h1>Alterar Plano de Saúde</h1>
+<form class="form" id="frmPlanosSaude" method="POST" action="<?= $this->actionForm ?>">
+	<img src="" id="logoOperadora" width="150px" height="75px;"/>
+    <fieldset>
+        <legend>Dados do plano de saude</legend>
+        <div class="grid-5-12">
+            <label class="form-lbl">Operadora:</label>
+            <select id="idOperadora" name="idOperadora" style="width:230px;">
+            	<option value="">Selecione...</option>
+	            <?php if( count( $this->objOperadora ) ): ?>
+		            <?php foreach( $this->objOperadora as $values ): ?>
+		                <option value="<?= $values->getIdOperadora() ?>"><?= $values->getNoOperadora() ?></option>
+		            <?php endforeach; ?>
+	            <?php endif; ?>
+            </select>
+            <img src="../../../../img/form-ic-error.png" id="btExcluiOperadora" alt="Excluir operadora" title="Excluir operadora" style="cursor:pointer;">
+        </div>
+        <div id="categoriaPlano" class="grid-7-12"></div>
+        <div id="detalhe" class="grid-12-12"></div>
+        <div class="grid-12-12">
+        	<input class="form-button" type="submit" value="Enviar" title="Salvar" id="btSalvar"/>
+        </div>
+	</fieldset>
+</form>    

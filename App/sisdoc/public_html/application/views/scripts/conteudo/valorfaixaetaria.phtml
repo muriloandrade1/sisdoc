@@ -1,0 +1,6 @@
+<?php if( count( $this->objValorFaixaEtaria ) ): 
+	foreach( $this->objValorFaixaEtaria as $value ): ?>
+		<label class="form-lbl">Valor do plano:</label>
+		<input id="nuValor" name="nuValor" type="text" class="form-txt" value="<?= $value->getNuValor() ?>"></input>
+	<?php endforeach; 
+endif; ?>

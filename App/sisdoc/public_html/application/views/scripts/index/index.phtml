@@ -1,0 +1,69 @@
+<?php
+    $operadora = new Application_Model_Operadora_OperadoraMapper();
+    $conteudo  = new Application_Model_Conteudo_ConteudoMapper();
+?>
+<style type="text/css">
+    a {
+            color: #388398;
+            text-decoration: none;
+    }
+    a:visited {
+            color: #333300;
+    }
+    a:hover {
+            color: #333300;
+            text-decoration: underline;
+    }
+    h3 {
+            margin: 0;
+            padding: 0 0 .3em;
+    }
+    p {
+            margin: 0;
+            padding: 0 0 .5em;
+    }
+    .pane-list {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+    }
+    .pane-list li {
+            background: #F5F5F5;
+            padding: 10px 20px 10px;
+            border-top: solid 1px #A7BECC;
+            cursor: pointer;
+    }
+    .pane-list li:hover {
+            background: #f6ffe9;
+    }
+</style>
+<div id="conteudoTopo">
+    <h1>INDICO SA&Uacute;DE</h1>
+    <p>
+        Os melhores planos de sa&uacute;de e odontol&oacute;gicos do mercado em um s&oacute; lugar. Temos todas as informa&ccedil;&otilde;es que voc&ecirc; precisa para encontrar
+        um plano que mais se enquadra com voc&ecirc; e sua fam&iacute;lia. Conforto, qualidade, pre&ccedil;o e &oacute;timo atendimento, aqui voc&ecirc;
+        encontra tudo isso.
+    </p>
+    <p align="right"><a href="<?= $this->baseUrl() ?>/contato/pessoal">Entre em contato com nosso corretor!</a></p>
+</div>
+<div id="conteudoLeft">
+    <h1>PLANOS DE SA&Uacute;DE / ODONTOL&Oacute;GICOS</h1>
+        <ul class="pane-list">
+        <?php if( count( $this->objOperadora ) ): ?>
+            <?php foreach( $this->objOperadora as $values ): ?>            
+                <li><img src="../../../../img/img_logo/<?= $values->getIdOperadora() ?>.jpg" width="150px" height="75px;"/> 
+                    <!-- <span style="font-size:14px;text-transform:uppercase;"><b><?//= $values->getNoOperadora() ?></b></span> -->
+                    <p><?= $values->getDsOperadora() ?></p>
+                    <p align="right"><a href="<?= $this->baseUrl() ?>/conteudo/listar/id/<?= $values->getIdOperadora() ?>">Escolha seu plano da <?= $values->getNoOperadora() ?></a></p>
+                </li>
+            <?php endforeach; ?>
+        <?php else: ?>
+            <li>
+                <h3>Aguarde... em breve, sua sa&uacute;de vai ter um &oacute;timo plano!</h3>
+            </li>
+        <?php endif; ?>
+    </ul>
+</div>
+<!--<div id="conteudoRight">
+
+</div>-->

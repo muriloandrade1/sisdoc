@@ -1,0 +1,14 @@
+<script>
+jQuery('#frmPlanosSaude').ready(function(){
+	jQuery('#idOperadora').change(function(){
+		carregaPagina('<?= $this->baseUrl() ?>/conteudo/categoriaplano/','categoriaPlano',jQuery('#idOperadora').val());
+    });
+});
+</script>
+<label class="form-lbl">Operadora:</label>
+<select id="idOperadora" name="idOperadora">
+  	<option>Selecione...</option>
+    <?php foreach( $this->objOperadora as $value ): ?>
+	   	<option value="<?= $value->getIdOperadora() ?>"><?= $value->getNoOperadora() ?></option>
+    <?php endforeach; ?>
+</select>
