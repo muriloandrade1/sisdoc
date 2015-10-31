@@ -11,11 +11,14 @@ class IndexController extends Zend_Controller_Action {
         $request = $this->getRequest();
 
         if ($request->getPost()) {            
-            if (!empty(self::logar($request->getPost()))) {
+            $retorno = self::logar($request->getPost());
+
+            if ($retorno->getCode()) {
                 //$this->_redirect("/");
                 echo "passou";
             } else {
-                $this->view->$message = "Usuário e/ou senha inválidos.";
+                echo "<b style='color: red;'>Usuário e/ou senha inválidos</b>";
+                //$this->view->$message = "Usuário e/ou senha inválidos.";
             }
         }
     }

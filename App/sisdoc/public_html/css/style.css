@@ -89,7 +89,7 @@ ol {
     float: left;
     width: 170px;
     height: 105px;
-    background: url(../img/logo1.png) no-repeat;
+    /*background: url(../img/logo1.png) no-repeat;*/
     margin-left: 17%;
 }
 
