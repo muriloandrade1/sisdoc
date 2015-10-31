@@ -1,151 +1,139 @@
 <?php
-class Application_Model_Tbdocumentos_Tbdocumentos
-{
-protected $_numero;
-protected $_titulo;
-protected $_obs;
-protected $_dip;
-protected $_dp;
-protected $_av;
-protected $_dfr0;
-protected $_os;
-protected $_docpend;
-protected $_cancelado;
 
-public function __construct(array $options = null)
-{
-	if (is_array($options)) {
-		$this->setOptions($options);
-	}
-}
+class Application_Model_Tbdocumentos_Tbdocumentos {
 
-public function __set($name, $value)
-{
-	$method = 'set' . $name;
-	if (('mapper' == $name) || !method_exists($this, $method)) {
-		throw new Exception('Propriedade inválida para arquivo');
-	}
-	$this->$method($value);
-}
+    protected $_numero;
+    protected $_titulo;
+    protected $_obs;
+    protected $_dip;
+    protected $_dp;
+    protected $_av;
+    protected $_dfr0;
+    protected $_os;
+    protected $_docpend;
+    protected $_cancelado;
 
-public function __get($name)
-{
-	$method = 'get' . $name;
-	if (('mapper' == $name) || !method_exists($this, $method)) {
-		throw new Exception('Propriedade inválida para arquivo');
-	}
-	return $this->$method();
-}
+    public function __construct(array $options = null) {
+        if (is_array($options)) {
+            $this->setOptions($options);
+        }
+    }
 
-public function setOptions(array $options)
-{
-	$methods = get_class_methods($this);
-	foreach ($options as $key => $value) {
-		$method = 'set' . ucfirst($key);
-		if (in_array($method, $methods)) {
-			$this->$method($value);
-		}
-	}
-	return $this;
-}
-public function setDsnumero($ds)
-{
-	$this->_ds_acomodacao = (string) $ds;
-	return $this;
-}
+    public function __set($name, $value) {
+        $method = 'set' . $name;
+        if (('mapper' == $name) || !method_exists($this, $method)) {
+            throw new Exception('Propriedade inválida para arquivo');
+        }
+        $this->$method($value);
+    }
 
-public function getDsnumero()
-{
-	return $this->_ds_numero;
-}
-public function setDstitulo($ds)
-{
-	$this->_ds_acomodacao = (string) $ds;
-	return $this;
-}
+    public function __get($name) {
+        $method = 'get' . $name;
+        if (('mapper' == $name) || !method_exists($this, $method)) {
+            throw new Exception('Propriedade inválida para arquivo');
+        }
+        return $this->$method();
+    }
 
-public function getDstitulo()
-{
-	return $this->_ds_titulo;
-}
-public function setDsobs($ds)
-{
-	$this->_ds_acomodacao = (string) $ds;
-	return $this;
-}
+    public function setOptions(array $options) {
+        $methods = get_class_methods($this);
+        foreach ($options as $key => $value) {
+            $method = 'set' . ucfirst($key);
+            if (in_array($method, $methods)) {
+                $this->$method($value);
+            }
+        }
+        return $this;
+    }
 
-public function getDsobs()
-{
-	return $this->_ds_obs;
-}
-public function setDtdip($dt)
-{
-	$this->_dt_acomodacao = $dt;
-	return $this;
-}
+    public function setnumero($ds) {
+        $this->_numero = $ds;
+        return $this;
+    }
 
-public function getDtdip()
-{
-	return $this->_dt_dip;
-}
-public function setNudp($nu)
-{
-	$this->_nu_acomodacao = (int) $nu;
-	return $this;
-}
+    public function getnumero() {
+        return $this->_numero;
+    }
 
-public function getNudp()
-{
-	return $this->_nu_dp;
-}
-public function setNuav($nu)
-{
-	$this->_nu_acomodacao = (int) $nu;
-	return $this;
-}
+    public function settitulo($ds) {
+        $this->_titulo = $ds;
+        return $this;
+    }
 
-public function getNuav()
-{
-	return $this->_nu_av;
-}
-public function setDtdfr0($dt)
-{
-	$this->_dt_acomodacao = $dt;
-	return $this;
-}
+    public function gettitulo() {
+        return $this->_titulo;
+    }
 
-public function getDtdfr0()
-{
-	return $this->_dt_dfr0;
-}
-public function setDsos($ds)
-{
-	$this->_ds_acomodacao = (string) $ds;
-	return $this;
-}
+    public function setobs($ds) {
+        $this->_obs = $ds;
+        return $this;
+    }
 
-public function getDsos()
-{
-	return $this->_ds_os;
-}
-public function setNudocpend($nu)
-{
-	$this->_nu_acomodacao = (int) $nu;
-	return $this;
-}
+    public function getobs() {
+        return $this->_obs;
+    }
 
-public function getNudocpend()
-{
-	return $this->_nu_docpend;
-}
-public function setNucancelado($nu)
-{
-	$this->_nu_acomodacao = (int) $nu;
-	return $this;
-}
+    public function setdip($dt) {
+        $this->_dip = $dt;
+        return $this;
+    }
 
-public function getNucancelado()
-{
-	return $this->_nu_cancelado;
-}
+    public function getdip() {
+        return $this->_dip;
+    }
+
+    public function setdp($nu) {
+        $this->_dp = $nu;
+        return $this;
+    }
+
+    public function getdp() {
+        return $this->_dp;
+    }
+
+    public function setav($nu) {
+        $this->_av = $nu;
+        return $this;
+    }
+
+    public function getav() {
+        return $this->_av;
+    }
+
+    public function setdfr0($dt) {
+        $this->_dfr0 = $dt;
+        return $this;
+    }
+
+    public function getdfr0() {
+        return $this->_dfr0;
+    }
+
+    public function setos($ds) {
+        $this->_os = $ds;
+        return $this;
+    }
+
+    public function getos() {
+        return $this->_os;
+    }
+
+    public function setdocpend($nu) {
+        $this->_docpend = $nu;
+        return $this;
+    }
+
+    public function getdocpend() {
+        return $this->_docpend;
+    }
+
+    public function setcancelado($nu) {
+        $this->_cancelado = $nu;
+        return $this;
+    }
+
+    public function getcancelado() {
+        return $this->_cancelado;
+    }
+
 }

@@ -1,50 +1,39 @@
 <?php
 
-class IndexController extends Zend_Controller_Action
-{
+class IndexController extends Zend_Controller_Action {
 
-    public function init()
-    {
+    public function init() {
         $this->view->pIndex = 'current';
     }
 
-    public function indexAction()
-    {
-        $operadora = new Application_Model_Operadora_OperadoraMapper();
-        $this->view->objOperadora = $operadora->fetchAll();
-        $this->view->valid = Zend_Auth::getInstance()->hasIdentity();
-        
-    	$request = $this->getRequest();
-        if ($request->getPost()){
-        	$retorno = self::logar($request->getPost());
+    public function indexAction() {
+         
+        $request = $this->getRequest();
 
-        	if(!empty($retorno))
-        	{
-        		$this->_redirect("/");
-        	}
-        	else
-        	{
-        		$this->view->$message = "Usuário e/ou senha inválidos.";
-        	}       	
+        if ($request->getPost()) {            
+            if (!empty(self::logar($request->getPost()))) {
+                //$this->_redirect("/");
+                echo "passou";
+            } else {
+                $this->view->$message = "Usuário e/ou senha inválidos.";
+            }
         }
+    }
+
+    public function logar($post) {
+        $usuario = new Application_Model_Tbacesso_Tbacesso();
+        $user = new Application_Model_Tbacesso_TbacessoMapper();
+
+        $usuario->setnome ($post["user"]);
+        $usuario->setsenha($post["pswd"]);
         
+        return $user->login($usuario);
     }
-        
-    public function logar($post)
-    {
-    	$usuario = new Application_Model_Usuario_Usuario();
-        $user = new Application_Model_Usuario_UsuarioMapper();
-        	
-        $usuario->setDsLogin($post["user"]);
-        $usuario->setDsPass($post["pwd"]);
-        $result = $user->login($usuario);
-    	return $result;
+
+    public function logoutAction() {
+        $auth = Zend_Auth::getInstance();
+        $auth->clearIdentity();
+        $this->_redirect("/");
     }
-    
-    public function logoutAction()
-    {
-    	$auth = Zend_Auth::getInstance();
-    	$auth->clearIdentity();
-    	$this->_redirect("/");
-    }
+
 }

@@ -1,316 +1,289 @@
 <?php
-class Application_Model_Tbguiaremessa_Tbguiaremessa
-{
-protected $_numeroguiarem;
-protected $_dataguiarem;
-protected $_atencaode;
-protected $_projeto;
-protected $_assinadopor;
-protected $_funcao;
-protected $_obs1;
-protected $_obs2;
-protected $_obs3;
-protected $_assunto;
-protected $_campo1;
-protected $_campo2;
-protected $_campo3;
-protected $_campo4;
-protected $_campo5;
-protected $_campo6;
-protected $_campo7;
-protected $_campo8;
-protected $_campo9;
-protected $_campo10;
-protected $_campo11;
-protected $_campo12;
-protected $_assinatura1;
-protected $_assinatura2;
-protected $_assinatura3;
 
-public function __construct(array $options = null)
-{
-	if (is_array($options)) {
-		$this->setOptions($options);
-	}
-}
+class Application_Model_Tbguiaremessa_Tbguiaremessa {
 
-public function __set($name, $value)
-{
-	$method = 'set' . $name;
-	if (('mapper' == $name) || !method_exists($this, $method)) {
-		throw new Exception('Propriedade inválida para arquivo');
-	}
-	$this->$method($value);
-}
+    protected $_numeroguiarem;
+    protected $_dataguiarem;
+    protected $_atencaode;
+    protected $_projeto;
+    protected $_assinadopor;
+    protected $_funcao;
+    protected $_obs1;
+    protected $_obs2;
+    protected $_obs3;
+    protected $_assunto;
+    protected $_campo1;
+    protected $_campo2;
+    protected $_campo3;
+    protected $_campo4;
+    protected $_campo5;
+    protected $_campo6;
+    protected $_campo7;
+    protected $_campo8;
+    protected $_campo9;
+    protected $_campo10;
+    protected $_campo11;
+    protected $_campo12;
+    protected $_assinatura1;
+    protected $_assinatura2;
+    protected $_assinatura3;
 
-public function __get($name)
-{
-	$method = 'get' . $name;
-	if (('mapper' == $name) || !method_exists($this, $method)) {
-		throw new Exception('Propriedade inválida para arquivo');
-	}
-	return $this->$method();
-}
+    public function __construct(array $options = null) {
+        if (is_array($options)) {
+            $this->setOptions($options);
+        }
+    }
 
-public function setOptions(array $options)
-{
-	$methods = get_class_methods($this);
-	foreach ($options as $key => $value) {
-		$method = 'set' . ucfirst($key);
-		if (in_array($method, $methods)) {
-			$this->$method($value);
-		}
-	}
-	return $this;
-}
-public function setDsnumeroguiarem($ds)
-{
-	$this->_ds_acomodacao = (string) $ds;
-	return $this;
-}
+    public function __set($name, $value) {
+        $method = 'set' . $name;
+        if (('mapper' == $name) || !method_exists($this, $method)) {
+            throw new Exception('Propriedade inválida para arquivo');
+        }
+        $this->$method($value);
+    }
 
-public function getDsnumeroguiarem()
-{
-	return $this->_ds_numeroguiarem;
-}
-public function setDtdataguiarem($dt)
-{
-	$this->_dt_acomodacao = $dt;
-	return $this;
-}
+    public function __get($name) {
+        $method = 'get' . $name;
+        if (('mapper' == $name) || !method_exists($this, $method)) {
+            throw new Exception('Propriedade inválida para arquivo');
+        }
+        return $this->$method();
+    }
 
-public function getDtdataguiarem()
-{
-	return $this->_dt_dataguiarem;
-}
-public function setDsatencaode($ds)
-{
-	$this->_ds_acomodacao = (string) $ds;
-	return $this;
-}
+    public function setOptions(array $options) {
+        $methods = get_class_methods($this);
+        foreach ($options as $key => $value) {
+            $method = 'set' . ucfirst($key);
+            if (in_array($method, $methods)) {
+                $this->$method($value);
+            }
+        }
+        return $this;
+    }
 
-public function getDsatencaode()
-{
-	return $this->_ds_atencaode;
-}
-public function setDsprojeto($ds)
-{
-	$this->_ds_acomodacao = (string) $ds;
-	return $this;
-}
+    public function setnumeroguiarem($ds) {
+        $this->_numeroguiarem = $ds;
+        return $this;
+    }
 
-public function getDsprojeto()
-{
-	return $this->_ds_projeto;
-}
-public function setDsassinadopor($ds)
-{
-	$this->_ds_acomodacao = (string) $ds;
-	return $this;
-}
+    public function getnumeroguiarem() {
+        return $this->_numeroguiarem;
+    }
 
-public function getDsassinadopor()
-{
-	return $this->_ds_assinadopor;
-}
-public function setDsfuncao($ds)
-{
-	$this->_ds_acomodacao = (string) $ds;
-	return $this;
-}
+    public function setdataguiarem($dt) {
+        $this->_dataguiarem = $dt;
+        return $this;
+    }
 
-public function getDsfuncao()
-{
-	return $this->_ds_funcao;
-}
-public function setDsobs1($ds)
-{
-	$this->_ds_acomodacao = (string) $ds;
-	return $this;
-}
+    public function getdataguiarem() {
+        return $this->_dataguiarem;
+    }
 
-public function getDsobs1()
-{
-	return $this->_ds_obs1;
-}
-public function setDsobs2($ds)
-{
-	$this->_ds_acomodacao = (string) $ds;
-	return $this;
-}
+    public function setatencaode($ds) {
+        $this->_atencaode = $ds;
+        return $this;
+    }
 
-public function getDsobs2()
-{
-	return $this->_ds_obs2;
-}
-public function setDsobs3($ds)
-{
-	$this->_ds_acomodacao = (string) $ds;
-	return $this;
-}
+    public function getatencaode() {
+        return $this->_atencaode;
+    }
 
-public function getDsobs3()
-{
-	return $this->_ds_obs3;
-}
-public function setDsassunto($ds)
-{
-	$this->_ds_acomodacao = (string) $ds;
-	return $this;
-}
+    public function setprojeto($ds) {
+        $this->_projeto = $ds;
+        return $this;
+    }
 
-public function getDsassunto()
-{
-	return $this->_ds_assunto;
-}
-public function setDscampo1($ds)
-{
-	$this->_ds_acomodacao = (string) $ds;
-	return $this;
-}
+    public function getprojeto() {
+        return $this->_projeto;
+    }
 
-public function getDscampo1()
-{
-	return $this->_ds_campo1;
-}
-public function setDscampo2($ds)
-{
-	$this->_ds_acomodacao = (string) $ds;
-	return $this;
-}
+    public function setassinadopor($ds) {
+        $this->_assinadopor = $ds;
+        return $this;
+    }
 
-public function getDscampo2()
-{
-	return $this->_ds_campo2;
-}
-public function setDscampo3($ds)
-{
-	$this->_ds_acomodacao = (string) $ds;
-	return $this;
-}
+    public function getassinadopor() {
+        return $this->_assinadopor;
+    }
 
-public function getDscampo3()
-{
-	return $this->_ds_campo3;
-}
-public function setDscampo4($ds)
-{
-	$this->_ds_acomodacao = (string) $ds;
-	return $this;
-}
+    public function setfuncao($ds) {
+        $this->_funcao = $ds;
+        return $this;
+    }
 
-public function getDscampo4()
-{
-	return $this->_ds_campo4;
-}
-public function setDscampo5($ds)
-{
-	$this->_ds_acomodacao = (string) $ds;
-	return $this;
-}
+    public function getfuncao() {
+        return $this->_funcao;
+    }
 
-public function getDscampo5()
-{
-	return $this->_ds_campo5;
-}
-public function setDscampo6($ds)
-{
-	$this->_ds_acomodacao = (string) $ds;
-	return $this;
-}
+    public function setobs1($ds) {
+        $this->_obs1 = $ds;
+        return $this;
+    }
 
-public function getDscampo6()
-{
-	return $this->_ds_campo6;
-}
-public function setDscampo7($ds)
-{
-	$this->_ds_acomodacao = (string) $ds;
-	return $this;
-}
+    public function getobs1() {
+        return $this->_obs1;
+    }
 
-public function getDscampo7()
-{
-	return $this->_ds_campo7;
-}
-public function setDscampo8($ds)
-{
-	$this->_ds_acomodacao = (string) $ds;
-	return $this;
-}
+    public function setobs2($ds) {
+        $this->_obs2 = $ds;
+        return $this;
+    }
 
-public function getDscampo8()
-{
-	return $this->_ds_campo8;
-}
-public function setDscampo9($ds)
-{
-	$this->_ds_acomodacao = (string) $ds;
-	return $this;
-}
+    public function getobs2() {
+        return $this->_obs2;
+    }
 
-public function getDscampo9()
-{
-	return $this->_ds_campo9;
-}
-public function setDscampo10($ds)
-{
-	$this->_ds_acomodacao = (string) $ds;
-	return $this;
-}
+    public function setobs3($ds) {
+        $this->_obs3 = $ds;
+        return $this;
+    }
 
-public function getDscampo10()
-{
-	return $this->_ds_campo10;
-}
-public function setDscampo11($ds)
-{
-	$this->_ds_acomodacao = (string) $ds;
-	return $this;
-}
+    public function getobs3() {
+        return $this->_obs3;
+    }
 
-public function getDscampo11()
-{
-	return $this->_ds_campo11;
-}
-public function setDscampo12($ds)
-{
-	$this->_ds_acomodacao = (string) $ds;
-	return $this;
-}
+    public function setassunto($ds) {
+        $this->_assunto = $ds;
+        return $this;
+    }
 
-public function getDscampo12()
-{
-	return $this->_ds_campo12;
-}
-public function setDsassinatura1($ds)
-{
-	$this->_ds_acomodacao = (string) $ds;
-	return $this;
-}
+    public function getassunto() {
+        return $this->_assunto;
+    }
 
-public function getDsassinatura1()
-{
-	return $this->_ds_assinatura1;
-}
-public function setDsassinatura2($ds)
-{
-	$this->_ds_acomodacao = (string) $ds;
-	return $this;
-}
+    public function setcampo1($ds) {
+        $this->_campo1 = $ds;
+        return $this;
+    }
 
-public function getDsassinatura2()
-{
-	return $this->_ds_assinatura2;
-}
-public function setDsassinatura3($ds)
-{
-	$this->_ds_acomodacao = (string) $ds;
-	return $this;
-}
+    public function getcampo1() {
+        return $this->_campo1;
+    }
 
-public function getDsassinatura3()
-{
-	return $this->_ds_assinatura3;
-}
+    public function setcampo2($ds) {
+        $this->_campo2 = $ds;
+        return $this;
+    }
+
+    public function getcampo2() {
+        return $this->_campo2;
+    }
+
+    public function setcampo3($ds) {
+        $this->_campo3 = $ds;
+        return $this;
+    }
+
+    public function getcampo3() {
+        return $this->_campo3;
+    }
+
+    public function setcampo4($ds) {
+        $this->_campo4 = $ds;
+        return $this;
+    }
+
+    public function getcampo4() {
+        return $this->_campo4;
+    }
+
+    public function setcampo5($ds) {
+        $this->_campo5 = $ds;
+        return $this;
+    }
+
+    public function getcampo5() {
+        return $this->_campo5;
+    }
+
+    public function setcampo6($ds) {
+        $this->_campo6 = $ds;
+        return $this;
+    }
+
+    public function getcampo6() {
+        return $this->_campo6;
+    }
+
+    public function setcampo7($ds) {
+        $this->_campo7 = $ds;
+        return $this;
+    }
+
+    public function getcampo7() {
+        return $this->_campo7;
+    }
+
+    public function setcampo8($ds) {
+        $this->_campo8 = $ds;
+        return $this;
+    }
+
+    public function getcampo8() {
+        return $this->_campo8;
+    }
+
+    public function setcampo9($ds) {
+        $this->_campo9 = $ds;
+        return $this;
+    }
+
+    public function getcampo9() {
+        return $this->_campo9;
+    }
+
+    public function setcampo10($ds) {
+        $this->_campo10 = $ds;
+        return $this;
+    }
+
+    public function getcampo10() {
+        return $this->_campo10;
+    }
+
+    public function setcampo11($ds) {
+        $this->_campo11 = $ds;
+        return $this;
+    }
+
+    public function getcampo11() {
+        return $this->_campo11;
+    }
+
+    public function setcampo12($ds) {
+        $this->_campo12 = $ds;
+        return $this;
+    }
+
+    public function getcampo12() {
+        return $this->_campo12;
+    }
+
+    public function setassinatura1($ds) {
+        $this->_assinatura1 = $ds;
+        return $this;
+    }
+
+    public function getassinatura1() {
+        return $this->_assinatura1;
+    }
+
+    public function setassinatura2($ds) {
+        $this->_assinatura2 = $ds;
+        return $this;
+    }
+
+    public function getassinatura2() {
+        return $this->_assinatura2;
+    }
+
+    public function setassinatura3($ds) {
+        $this->_assinatura3 = $ds;
+        return $this;
+    }
+
+    public function getassinatura3() {
+        return $this->_assinatura3;
+    }
+
 }

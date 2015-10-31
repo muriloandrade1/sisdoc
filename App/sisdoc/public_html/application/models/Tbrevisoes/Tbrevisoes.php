@@ -1,283 +1,259 @@
 <?php
-class Application_Model_Tbrevisoes_Tbrevisoes
-{
-protected $_numero;
-protected $_revisao;
-protected $_numeroguiarem;
-protected $_dataguiarem;
-protected $_tiporem;
-protected $_quantrem;
-protected $_finrem;
-protected $_findev;
-protected $_numeroguiadev;
-protected $_crc32;
-protected $_qtdptts;
-protected $_qtdrope;
-protected $_qtdrcon;
-protected $_qtdcot;
-protected $_qtdptle;
-protected $_qtdpttl;
-protected $_qtdpttp;
-protected $_qtdpttc;
-protected $_qtdgsdd;
-protected $_qtdppa;
-protected $_qtdptc;
-protected $_qtdcpa;
 
-public function __construct(array $options = null)
-{
-	if (is_array($options)) {
-		$this->setOptions($options);
-	}
-}
+class Application_Model_Tbrevisoes_Tbrevisoes {
 
-public function __set($name, $value)
-{
-	$method = 'set' . $name;
-	if (('mapper' == $name) || !method_exists($this, $method)) {
-		throw new Exception('Propriedade inválida para arquivo');
-	}
-	$this->$method($value);
-}
+    protected $_numero;
+    protected $_revisao;
+    protected $_numeroguiarem;
+    protected $_dataguiarem;
+    protected $_tiporem;
+    protected $_quantrem;
+    protected $_finrem;
+    protected $_findev;
+    protected $_numeroguiadev;
+    protected $_crc32;
+    protected $_qtdptts;
+    protected $_qtdrope;
+    protected $_qtdrcon;
+    protected $_qtdcot;
+    protected $_qtdptle;
+    protected $_qtdpttl;
+    protected $_qtdpttp;
+    protected $_qtdpttc;
+    protected $_qtdgsdd;
+    protected $_qtdppa;
+    protected $_qtdptc;
+    protected $_qtdcpa;
 
-public function __get($name)
-{
-	$method = 'get' . $name;
-	if (('mapper' == $name) || !method_exists($this, $method)) {
-		throw new Exception('Propriedade inválida para arquivo');
-	}
-	return $this->$method();
-}
+    public function __construct(array $options = null) {
+        if (is_array($options)) {
+            $this->setOptions($options);
+        }
+    }
 
-public function setOptions(array $options)
-{
-	$methods = get_class_methods($this);
-	foreach ($options as $key => $value) {
-		$method = 'set' . ucfirst($key);
-		if (in_array($method, $methods)) {
-			$this->$method($value);
-		}
-	}
-	return $this;
-}
-public function setDsnumero($ds)
-{
-	$this->_ds_acomodacao = (string) $ds;
-	return $this;
-}
+    public function __set($name, $value) {
+        $method = 'set' . $name;
+        if (('mapper' == $name) || !method_exists($this, $method)) {
+            throw new Exception('Propriedade inválida para arquivo');
+        }
+        $this->$method($value);
+    }
 
-public function getDsnumero()
-{
-	return $this->_ds_numero;
-}
-public function setDsrevisao($ds)
-{
-	$this->_ds_acomodacao = (string) $ds;
-	return $this;
-}
+    public function __get($name) {
+        $method = 'get' . $name;
+        if (('mapper' == $name) || !method_exists($this, $method)) {
+            throw new Exception('Propriedade inválida para arquivo');
+        }
+        return $this->$method();
+    }
 
-public function getDsrevisao()
-{
-	return $this->_ds_revisao;
-}
-public function setDsnumeroguiarem($ds)
-{
-	$this->_ds_acomodacao = (string) $ds;
-	return $this;
-}
+    public function setOptions(array $options) {
+        $methods = get_class_methods($this);
+        foreach ($options as $key => $value) {
+            $method = 'set' . ucfirst($key);
+            if (in_array($method, $methods)) {
+                $this->$method($value);
+            }
+        }
+        return $this;
+    }
 
-public function getDsnumeroguiarem()
-{
-	return $this->_ds_numeroguiarem;
-}
-public function setDtdataguiarem($dt)
-{
-	$this->_dt_acomodacao = $dt;
-	return $this;
-}
+    public function setnumero($ds) {
+        $this->_numero = $ds;
+        return $this;
+    }
 
-public function getDtdataguiarem()
-{
-	return $this->_dt_dataguiarem;
-}
-public function setDstiporem($ds)
-{
-	$this->_ds_acomodacao = (string) $ds;
-	return $this;
-}
+    public function getnumero() {
+        return $this->_numero;
+    }
 
-public function getDstiporem()
-{
-	return $this->_ds_tiporem;
-}
-public function setDsquantrem($ds)
-{
-	$this->_ds_acomodacao = (string) $ds;
-	return $this;
-}
+    public function setrevisao($ds) {
+        $this->_revisao = $ds;
+        return $this;
+    }
 
-public function getDsquantrem()
-{
-	return $this->_ds_quantrem;
-}
-public function setDsfinrem($ds)
-{
-	$this->_ds_acomodacao = (string) $ds;
-	return $this;
-}
+    public function getrevisao() {
+        return $this->_revisao;
+    }
 
-public function getDsfinrem()
-{
-	return $this->_ds_finrem;
-}
-public function setDsfindev($ds)
-{
-	$this->_ds_acomodacao = (string) $ds;
-	return $this;
-}
+    public function setnumeroguiarem($ds) {
+        $this->_numeroguiarem = $ds;
+        return $this;
+    }
 
-public function getDsfindev()
-{
-	return $this->_ds_findev;
-}
-public function setDsnumeroguiadev($ds)
-{
-	$this->_ds_acomodacao = (string) $ds;
-	return $this;
-}
+    public function getnumeroguiarem() {
+        return $this->_numeroguiarem;
+    }
 
-public function getDsnumeroguiadev()
-{
-	return $this->_ds_numeroguiadev;
-}
-public function setDscrc32($ds)
-{
-	$this->_ds_acomodacao = (string) $ds;
-	return $this;
-}
+    public function setdataguiarem($dt) {
+        $this->_dataguiarem = $dt;
+        return $this;
+    }
 
-public function getDscrc32()
-{
-	return $this->_ds_crc32;
-}
-public function setDsqtdptts($ds)
-{
-	$this->_ds_acomodacao = (string) $ds;
-	return $this;
-}
+    public function getdataguiarem() {
+        return $this->_dataguiarem;
+    }
 
-public function getDsqtdptts()
-{
-	return $this->_ds_qtdptts;
-}
-public function setDsqtdrope($ds)
-{
-	$this->_ds_acomodacao = (string) $ds;
-	return $this;
-}
+    public function settiporem($ds) {
+        $this->_tiporem = $ds;
+        return $this;
+    }
 
-public function getDsqtdrope()
-{
-	return $this->_ds_qtdrope;
-}
-public function setDsqtdrcon($ds)
-{
-	$this->_ds_acomodacao = (string) $ds;
-	return $this;
-}
+    public function gettiporem() {
+        return $this->_tiporem;
+    }
 
-public function getDsqtdrcon()
-{
-	return $this->_ds_qtdrcon;
-}
-public function setDsqtdcot($ds)
-{
-	$this->_ds_acomodacao = (string) $ds;
-	return $this;
-}
+    public function setquantrem($ds) {
+        $this->_quantrem = $ds;
+        return $this;
+    }
 
-public function getDsqtdcot()
-{
-	return $this->_ds_qtdcot;
-}
-public function setDsqtdptle($ds)
-{
-	$this->_ds_acomodacao = (string) $ds;
-	return $this;
-}
+    public function getquantrem() {
+        return $this->_quantrem;
+    }
 
-public function getDsqtdptle()
-{
-	return $this->_ds_qtdptle;
-}
-public function setDsqtdpttl($ds)
-{
-	$this->_ds_acomodacao = (string) $ds;
-	return $this;
-}
+    public function setfinrem($ds) {
+        $this->_finrem = $ds;
+        return $this;
+    }
 
-public function getDsqtdpttl()
-{
-	return $this->_ds_qtdpttl;
-}
-public function setDsqtdpttp($ds)
-{
-	$this->_ds_acomodacao = (string) $ds;
-	return $this;
-}
+    public function getfinrem() {
+        return $this->_finrem;
+    }
 
-public function getDsqtdpttp()
-{
-	return $this->_ds_qtdpttp;
-}
-public function setDsqtdpttc($ds)
-{
-	$this->_ds_acomodacao = (string) $ds;
-	return $this;
-}
+    public function setfindev($ds) {
+        $this->_findev = $ds;
+        return $this;
+    }
 
-public function getDsqtdpttc()
-{
-	return $this->_ds_qtdpttc;
-}
-public function setDsqtdgsdd($ds)
-{
-	$this->_ds_acomodacao = (string) $ds;
-	return $this;
-}
+    public function getfindev() {
+        return $this->_findev;
+    }
 
-public function getDsqtdgsdd()
-{
-	return $this->_ds_qtdgsdd;
-}
-public function setDsqtdppa($ds)
-{
-	$this->_ds_acomodacao = (string) $ds;
-	return $this;
-}
+    public function setnumeroguiadev($ds) {
+        $this->_numeroguiadev = $ds;
+        return $this;
+    }
 
-public function getDsqtdppa()
-{
-	return $this->_ds_qtdppa;
-}
-public function setDsqtdptc($ds)
-{
-	$this->_ds_acomodacao = (string) $ds;
-	return $this;
-}
+    public function getnumeroguiadev() {
+        return $this->_numeroguiadev;
+    }
 
-public function getDsqtdptc()
-{
-	return $this->_ds_qtdptc;
-}
-public function setDsqtdcpa($ds)
-{
-	$this->_ds_acomodacao = (string) $ds;
-	return $this;
-}
+    public function setcrc32($ds) {
+        $this->_crc32 = $ds;
+        return $this;
+    }
 
-public function getDsqtdcpa()
-{
-	return $this->_ds_qtdcpa;
-}
+    public function getcrc32() {
+        return $this->_crc32;
+    }
+
+    public function setqtdptts($ds) {
+        $this->_qtdptts = $ds;
+        return $this;
+    }
+
+    public function getqtdptts() {
+        return $this->_qtdptts;
+    }
+
+    public function setqtdrope($ds) {
+        $this->_qtdrope = $ds;
+        return $this;
+    }
+
+    public function getqtdrope() {
+        return $this->_qtdrope;
+    }
+
+    public function setqtdrcon($ds) {
+        $this->_qtdrcon = $ds;
+        return $this;
+    }
+
+    public function getqtdrcon() {
+        return $this->_qtdrcon;
+    }
+
+    public function setqtdcot($ds) {
+        $this->_qtdcot = $ds;
+        return $this;
+    }
+
+    public function getqtdcot() {
+        return $this->_qtdcot;
+    }
+
+    public function setqtdptle($ds) {
+        $this->_qtdptle = $ds;
+        return $this;
+    }
+
+    public function getqtdptle() {
+        return $this->_qtdptle;
+    }
+
+    public function setqtdpttl($ds) {
+        $this->_qtdpttl = $ds;
+        return $this;
+    }
+
+    public function getqtdpttl() {
+        return $this->_qtdpttl;
+    }
+
+    public function setqtdpttp($ds) {
+        $this->_qtdpttp = $ds;
+        return $this;
+    }
+
+    public function getqtdpttp() {
+        return $this->_qtdpttp;
+    }
+
+    public function setqtdpttc($ds) {
+        $this->_qtdpttc = $ds;
+        return $this;
+    }
+
+    public function getqtdpttc() {
+        return $this->_qtdpttc;
+    }
+
+    public function setqtdgsdd($ds) {
+        $this->_qtdgsdd = $ds;
+        return $this;
+    }
+
+    public function getqtdgsdd() {
+        return $this->_qtdgsdd;
+    }
+
+    public function setqtdppa($ds) {
+        $this->_qtdppa = $ds;
+        return $this;
+    }
+
+    public function getqtdppa() {
+        return $this->_qtdppa;
+    }
+
+    public function setqtdptc($ds) {
+        $this->_qtdptc = $ds;
+        return $this;
+    }
+
+    public function getqtdptc() {
+        return $this->_qtdptc;
+    }
+
+    public function setqtdcpa($ds) {
+        $this->_qtdcpa = $ds;
+        return $this;
+    }
+
+    public function getqtdcpa() {
+        return $this->_qtdcpa;
+    }
+
 }
