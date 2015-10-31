@@ -6,16 +6,12 @@ class IndexController extends Zend_Controller_Action {
         $this->view->pIndex = 'current';
     }
 
-    public function indexAction() {
-         
+    public function indexAction() 
+    {         
         $request = $this->getRequest();
-
         if ($request->getPost()) {            
-            $retorno = self::logar($request->getPost());
-
-            if ($retorno->getCode()) {
-                //$this->_redirect("/");
-                echo "passou";
+            if (self::logar($request->getPost())->getCode()) {
+                $this->_redirect("/consulta/index");
             } else {
                 echo "<b style='color: red;'>Usuário e/ou senha inválidos</b>";
                 //$this->view->$message = "Usuário e/ou senha inválidos.";
@@ -27,7 +23,7 @@ class IndexController extends Zend_Controller_Action {
         $usuario = new Application_Model_Tbacesso_Tbacesso();
         $user = new Application_Model_Tbacesso_TbacessoMapper();
 
-        $usuario->setnome ($post["user"]);
+        $usuario->setnome($post["user"]);
         $usuario->setsenha($post["pswd"]);
         
         return $user->login($usuario);

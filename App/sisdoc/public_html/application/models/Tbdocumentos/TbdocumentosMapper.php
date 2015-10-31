@@ -22,4 +22,24 @@ class Application_Model_Tbdocumentos_TbdocumentosMapper {
         return $this->_dbTable;
     }
 
+    public function consultaPrincipal() {
+        $select = $this->getDbTable()
+                ->select('td.numero, td.titulo')
+                ->limit(20, 0);
+
+        $select->setIntegrityCheck(false);
+
+        $arrResult = array();
+        $resultSet = $this->getDbTable()->fetchAll($select);
+
+        foreach ($resultSet as $row) {
+            $arr = new Application_Model_Tbdocumentos_Tbdocumentos();
+            $arr->setnumero($row->Numero);
+            $arr->settitulo($row->Titulo);
+            $arrResult[] = $arr;
+        }
+
+        return $arrResult;
+    }
+
 }

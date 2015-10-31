@@ -82,13 +82,13 @@ ol {
 }
 
 #top {
-    height: 109px;
+    height: 70px;
 }
 
 #logo {
     float: left;
     width: 170px;
-    height: 105px;
+    height: 70px;
     /*background: url(../img/logo1.png) no-repeat;*/
     margin-left: 17%;
 }
@@ -659,65 +659,6 @@ blockquote {
     color: #666666;
 }
 
-/*.menu {
-	height: 40px;
-	display: block;
-}
-
-.menu ul {
-	list-style: none;
-	padding: 0;
-	margin: 0;
-}
-
-.menu ul li { /* width and height of the menu items 
-	float: left;
-	overflow: hidden;
-	position: relative;
-	padding-left: 10px;
-	width: 132px;
-}
-
-.menu ul li a { /* must be postioned relative  
-	position: relative;
-	display: block;
-	height: 40px;
-	font-family: Arial, Helvetica, sans-serif;
-	font-size: 16px;
-	font-weight: normal;
-	letter-spacing: 1px;
-	text-transform: uppercase;
-	text-decoration: none;
-	cursor: pointer;
-}
-
-.menu ul li a span { /* all layers will be absolute positioned 
-	position: absolute;
-	left: 0;
-	width: 110px;
-}
-
-.menu ul li a span.out {
-	top: 0px;
-}
-
-.menu ul li a span.over,.menu ul li a span.bg { /* hide 
-	top: -45px;
-}
-
-#menu2 {
-
-}
-
-#menu2 ul li a {
-	color: #FFF;
-}
-
-#menu2 ul li a span.over { /*	background: #FFF;
-			color: #000; */
-
-}*/
-
 .pagelinkdiv {
     width: 122px;
     padding-right: 10px;
@@ -860,20 +801,20 @@ div.menu ul {
 div.menu ul ul {
     position: absolute;
     top: -999em;
-    width: 10em
+    width: 10em;
 }
 
 div.menu ul ul li {
-    width: 100%
+    width: 100%;
 }
 
 div.menu li:hover {
-    visibility: inherit
+    visibility: inherit;
 }
 
 div.menu li {
     float: left;
-    position: relative
+    position: relative;
 }
 
 div.menu a {

@@ -13,35 +13,16 @@
         <link rel="stylesheet" href="/scripts/nivoslider/nivo-slider.css" type="text/css" media="screen" />
         <link rel="stylesheet" href="/css/formee/form-structure.css" type="text/css" media="screen" />
         <link rel="stylesheet" href="/css/formee/form-style.css" type="text/css" media="screen" />
+        <link rel="stylesheet" href="/css/jquery.dataTables.min.css" type="text/css" media="screen" />
 
         <script type="text/javascript" src="/js/jquery/jquery.js"></script>
-        <script type="text/javascript" src="/js/jquery/jquery-latest.js"></script>
 
+        <script type="text/javascript" src="/js/jquery/jquery.dataTables.min.js"></script> 
         <script type="text/javascript" src="/js/jquery/jquery.validate.js"></script>
         <script type="text/javascript" src="/js/funcoes_uteis.js"></script>    
         <script type="text/javascript" src="/js/jquery/jquery.ui.datepicker.js"></script>
-        <script type="text/javascript" src="/js/jquery/jquery.ui.datepicker-pt-BR.js"></script>    
-        <script type="text/javascript" src="/js/jquery/mootools-1.2-core-yc.js"></script>
-        <script type="text/javascript" src="/js/jquery/mootools-1.2-more.js"></script>
-        <script type="text/javascript" src="/js/jquery/fx.slice.js"></script> 
-
-        <script type="text/javascript" src="/scripts/animate.js"></script> 
-        <script type="text/javascript" src="/scripts/nivoslider/jquery.nivo.slider.pack.js"></script>
-        <script type="text/javascript" src="/scripts/cufon/cufon-yui.js"></script>
-        <script type="text/javascript" src="/scripts/jquery.corner.js"></script>
-        <script type="text/javascript" src="/scripts/newsslider/slider.js"></script>
-
-        <script type="text/javascript">
-        jQuery.noConflict();
-        jQuery(window).load(function () {
-            jQuery('#slider').nivoSlider();
-        });
-
-        jQuery.noConflict();
-        jQuery('.slider').corner("8px");
-
-
-        </script>
+        <script type="text/javascript" src="/js/jquery/jquery.ui.datepicker-pt-BR.js"></script>
+        
 
     </head>
     <body>
@@ -93,20 +74,18 @@
             <br style="clear:both" />		
         </div>
         <div id="menu-primary" class="menu-container">
-            <div class="menu" style="padding-left:12%;">
+            <div class="menu" style="padding-left:12%;height: 30px;">
                 <ul id="menu-primary-items" class="sf-js-enabled" style="width:990px;">
-                    <?php if ($this->valid) { ?>
-                        <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-20"><a href="<?php echo $this->baseUrl() ?>/cadastro/operadora">Operadora</a></li>
-                        <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-20"><a href="<?php echo $this->baseUrl() ?>/cadastro/categoriaplano">Categoria Plano</a></li>
-                        <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-20"><a href="<?php echo $this->baseUrl() ?>/cadastro/cadastroplanos">Planos de saúde</a></li>
-                        <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-20"><a href="<?php echo $this->baseUrl() ?>/alterar/alterarplanos">Alterar plano</a></li>
-                        <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-20"><a href="<?php echo $this->baseUrl() ?>/conteudo/listapessoacontato">Lista Contatos</a></li>
+                    <?php if ($this->valid) { ?>                        
+                        <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-20"><a href="<?php echo $this->baseUrl() ?>/consulta/index">Opção 1</a></li>
+                        <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-20"><a href="<?php echo $this->baseUrl() ?>/consulta/index">Opção 2</a></li>
+                        <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-20"><a href="<?php echo $this->baseUrl() ?>/index/logout">Sair</a></li>
                     <?php } ?>
                 </ul>
             </div>
         </div>
         <div id="container">
-            <div style="width:75%; float:left;clear:rigth;">
+            <div style="width:100%; float:left;clear:rigth;">
                 <?php echo $this->layout()->content; ?>
             </div>          
             <div class="clean"></div>
