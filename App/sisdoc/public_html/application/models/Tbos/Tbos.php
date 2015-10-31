@@ -65,7 +65,7 @@ public function getDsdescricao()
 }
 public function setDtinicio($dt)
 {
-	$this->_dt_acomodacao = (datetime) $dt;
+	$this->_dt_acomodacao = $dt;
 	return $this;
 }
 
@@ -75,7 +75,7 @@ public function getDtinicio()
 }
 public function setDttermino($dt)
 {
-	$this->_dt_acomodacao = (datetime) $dt;
+	$this->_dt_acomodacao = $dt;
 	return $this;
 }
 

@@ -80,7 +80,7 @@ public function getDsobs()
 }
 public function setDtdip($dt)
 {
-	$this->_dt_acomodacao = (datetime) $dt;
+	$this->_dt_acomodacao = $dt;
 	return $this;
 }
 
@@ -110,7 +110,7 @@ public function getNuav()
 }
 public function setDtdfr0($dt)
 {
-	$this->_dt_acomodacao = (datetime) $dt;
+	$this->_dt_acomodacao = $dt;
 	return $this;
 }
 

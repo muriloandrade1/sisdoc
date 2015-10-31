@@ -75,7 +75,7 @@ public function getDsnumeroguiarem()
 }
 public function setDtdataguiarem($dt)
 {
-	$this->_dt_acomodacao = (datetime) $dt;
+	$this->_dt_acomodacao = $dt;
 	return $this;
 }
 

@@ -52,7 +52,7 @@ public function getDsnumeroguiadev()
 }
 public function setDtdataguiadev($dt)
 {
-	$this->_dt_acomodacao = (datetime) $dt;
+	$this->_dt_acomodacao = $dt;
 	return $this;
 }
 
